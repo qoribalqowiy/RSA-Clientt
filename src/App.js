@@ -18,7 +18,7 @@ function App() {
       return;
     }
     try {
-      const response = await axios.post(`${API_BASE_URL}`, {
+      const response = await axios.post(`${API_BASE_URL}/api/encrypt`, {
         message: message
       });
       setEncryptedMessage(response.data.encrypted_message);
@@ -40,7 +40,7 @@ function App() {
   // Function to handle decryption
   const handleDecrypt = async () => {
     try {
-      const response = await axios.post(`${API_BASE_URL}`, {
+      const response = await axios.post(`${API_BASE_URL}/api/decrypt`, {
         encrypted_message: encryptedMessage,
       });
       setDecryptedMessage(response.data.decrypted_message);
