@@ -18,7 +18,7 @@ function App() {
       return;
     }
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/encrypt`, {
+      const response = await axios.post(`${API_BASE_URL}`, {
         message: message
       });
       setEncryptedMessage(response.data.encrypted_message);
